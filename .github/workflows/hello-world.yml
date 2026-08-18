@@ -1,0 +1,21 @@
+# 1. The name of our automation script
+name: My First GitHub Action
+
+# 2. What TRIGGERS this script? (When someone pushes code to the 'main' branch)
+on:
+  push:
+    branches: [ "main" ]
+
+# 3. What WORK does the script do?
+jobs:
+  say-hello-job:
+    # Tell GitHub to use a fresh Linux virtual machine
+    runs-on: ubuntu-latest
+
+    # The actual steps this machine will execute
+    steps:
+    - name: Step 1 - Say Hello
+      run: echo "Hello, World! Welcome to GitHub Actions."
+
+    - name: Step 2 - Show Current Date and Time
+      run: date
